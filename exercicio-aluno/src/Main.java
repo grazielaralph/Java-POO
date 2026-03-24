@@ -11,20 +11,21 @@ public class Main {
         Scanner entrada = new Scanner(System.in);
 
         //vetor de alunos
-        Aluno[] alunos = new Aluno[QTD_ALUNOS];
+        Aluno[] alunos = new Aluno[3];
 
-        for(int i = 0; i< alunos.length; i++){
-            System.out.println("Digite o nome do aluno: ");
+        for(int i = 0; i<3; i++){
+            alunos[i] = new Aluno();
+            System.out.println("Digite o nome e nota do aluno: ");
             alunos[i].nome = entrada.nextLine();
-            System.out.println("Nota: ");
             alunos[i].nota = entrada.nextFloat();
+            entrada.nextLine(); //limpeza do buffer
         }
 
         for(int i = 0; i< alunos.length; i++){
             System.out.println("Situação do aluno "+alunos[i].nome+": "+(alunos[i].estaAprovado()?"Aprovado":"Reprovado"));
         }
 
-
+        entrada.close();
 
 
 
